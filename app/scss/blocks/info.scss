@@ -1,0 +1,23 @@
+.info {
+  text-align: center;
+  
+  &__title {
+    margin-bottom: 20px;
+    font-family: $font-accent;
+    font-size: 48px;
+  }
+
+  &__text {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 30px;
+    color: $accent;
+  }
+
+  @include tablets {
+    &__title {
+      font-size: 36px;
+      line-height: 1.1;
+    }
+  }
+}

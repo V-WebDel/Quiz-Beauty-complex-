@@ -1,0 +1,32 @@
+// Global
+//---------------------------------
+@import "global/variables";
+@import "global/mixins";
+@import "global/fonts";
+
+@import "global/basic";
+@import "global/utils";
+@import "global/container";
+
+
+
+// Options
+//---------------------------------
+
+@import 'elements';
+@import 'animation';
+  
+
+
+// Blocks
+//---------------------------------
+
+@import "blocks/top";
+@import "blocks/cases";
+@import "blocks/info";
+@import "blocks/addresses";
+@import "blocks/forms";
+@import "blocks/quiz";
+
+@import "blocks/footer";
+@import "blocks/modal";

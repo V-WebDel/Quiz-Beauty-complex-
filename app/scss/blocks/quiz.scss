@@ -1,0 +1,236 @@
+.quiz {
+  position: relative;
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  &__pagination {
+    position: relative;
+    margin-bottom: 40px;
+  }
+  
+  &__content {
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+
+    &--last {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 55px;
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  &__variants {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: auto;
+  }
+
+  &__btn {
+    padding: 16px 60px;
+    background-color: $blue;
+
+    &:hover {
+      background-color: $blue;
+    }
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    &--prev {
+      flex: 0 1 60px;
+      position: relative;
+      width: 60px;
+      height: 60px;
+      padding: 0;
+      background: inherit;
+      border: 3px solid $grey;
+      border-radius: 50%;
+
+      svg {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 30px;
+        height: 30px;
+        fill: $grey;
+        transform: translateY(-50%) rotate(180deg);
+      }
+
+      &:hover {
+        background: inherit;
+      }
+    }
+
+    &--form {
+      padding: 18px 25px;
+    }
+  }
+
+  &__radio, &__checkbox {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+
+  &__input {
+    width: 70%;
+    margin-top: 30px;
+    padding: 20px;
+    font-size: 16px;
+    border: 3px solid $grey;
+    border-radius: 10px;
+
+    &::placeholder {
+      color: $grey;
+    }
+  }
+
+  @include laptop {
+
+    &__wrap {
+      width: 100%;
+    }
+
+    &__title {
+      margin-bottom: 30px;
+    }
+
+    &__input {
+      margin-top: 10px;
+    }
+
+    &__nav {
+      margin-top: auto;
+      position: absolute;
+      bottom: 30px;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  @include tablets {
+    &__title {
+      font-size: 20px;
+
+      &--last {
+        font-size: 24px;
+      }
+    }
+
+    &__radio, &__checkbox {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    &__input {
+      padding: 12px;
+    }
+  }
+
+  @include phones {
+    &__title {
+      &--last {
+        margin-bottom: 5px;
+      }
+    }
+
+    &__subtitle {
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+
+    &__btn {
+      padding: 16px 25px;
+
+      &--form {
+        width: 100%;
+        padding: 16px 20px;
+        font-size: 16px;
+      }
+
+      &--prev {
+        padding: 0;
+      }
+    }
+    &__input {
+      width: 100%;
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+
+  &__line {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 5px;
+    background-color: #e5ebf0;
+    transform: translateY(-50%);
+  }
+
+  &__line-active {
+    position: absolute;
+    top: 50%;
+    width: 0;
+    height: 5px;
+    background-color: $accent;
+    transform: translateY(-50%);
+    transition: width 0.3s ease-out;
+  }
+
+  &__point {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: $white;
+    border: 5px solid #e5ebf0;
+    border-radius: 50%;
+    &.active {
+      background-color: $accent;
+      border: 5px solid $accent;
+    }
+  }
+
+  @include tablets {
+    &__line {
+      height: 3px;
+    }
+  
+    &__line-active {
+      height: 3px;
+    }
+    &__point {
+      width: 10px;
+      height: 10px;
+      border: 2px solid #e5ebf0;
+
+      &.active {
+        border: 2px solid $accent;
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+// mixins Viewports
+@mixin hd {
+  @media screen and (max-width: 1920px) {
+      @content;
+  }
+}
+
+@mixin desktop-1400 {
+  @media screen and (max-width: 1400px) {
+      @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (max-width: 1200px) {
+      @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (max-width: 992px) {
+      @content;
+  }
+}
+
+@mixin tablets {
+  @media screen and (max-width: 768px) {
+      @content;
+  }
+}
+
+@mixin phones {
+  @media screen and (max-width: 576px) {
+      @content;
+  }
+}
+
+// mixins Retina
+
+@mixin retina {
+  @media
+    only screen and (                min-resolution: 144dpi),
+    only screen and (                min-resolution: 1.5dppx) {
+      @content;
+  }
+}

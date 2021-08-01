@@ -1,0 +1,38 @@
+section.top
+  .top__wrap 
+    .top__block.top__block--content 
+      .top__inner
+        .top__logo
+          span.logo
+            +image('', 'logo', 'Логотип', 'Логотип', 'png')
+        .top__info-wrap
+          .top__info-item(data-number='0') Хотите стать <span>на 5 лет моложе?</span>
+          .top__info-item.hidden(data-number='1') <span>Не хотите</span> делать пластику?
+          .top__info-item.hidden(data-number='2') <span>Не хотите</span> видеть морщины в зеркале?
+        
+        .top__slider
+          .swiper-container.swiper-top
+            .swiper-wrapper
+              .swiper-slide
+                .top__item
+                  +image('slider/', '1', 'Фото слайда', 'Полный комплекс по омоложению лица', 'jpg')
+              .swiper-slide
+                .top__item
+                  +image('slider/', '2', 'Фото слайда', 'Полный комплекс по омоложению лица', 'jpg')
+              .swiper-slide
+                .top__item
+                  +image('slider/', '3', 'Фото слайда', 'Полный комплекс по омоложению лица', 'jpg')
+
+            .swiper-block-nav
+              .swiper-pagination
+
+        h1.top__title Полный комплекс по&nbsp;омоложению лица
+        p.top__date Индивидуальная цена на процедуру 
+          span только до 25 июля
+        p.top__text Ответьте на 
+          span.text-accent 5 вопросов 
+          | для получения индивидуальной цены
+        button.btn.btn--quiz.quiz-btn
+          span.btn__icon
+            +svg('play')
+          | Начать опрос

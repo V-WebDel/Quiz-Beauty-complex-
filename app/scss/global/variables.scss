@@ -1,0 +1,28 @@
+// Default colors
+$color-transparent:               rgba(255, 255, 255, 0);
+
+
+// Base
+$accent:      #a9ca8d;
+$default:     #001f40;
+
+$blue:        #8996e3;
+$grey:        #dcdfe9;;
+$white:       #ffffff;
+$other:       #464646;
+
+
+// Shadows
+$shadow-small: 0px 3px 20px rgba(0, 0, 0, 0.1);
+$shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+
+
+// Typography
+$font-accent:   "Bodoni-Cyrillic", Times, serif;
+$font-default:  "Roboto", Arial, Helvetica, sans-serif;
+
+
+// Other
+$fastdown:      all 0.2s ease;
+$middledown:    all 0.3s ease;
+$slowdown:      all 0.4s ease;

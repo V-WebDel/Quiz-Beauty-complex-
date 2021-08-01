@@ -1,0 +1,191 @@
+.section--modal.modal
+  .modal__overlay.hidden
+    button.no-btn.modal__close
+      +svg('close')
+
+    .modal__wrap.modal__wrap--callback.callback.hidden
+      .callback__title Оставьте заявку, чтобы получить<br> консультацию специалиста
+
+      form.form(action="")
+        input.form__field(name="Lead[name]" type="text" placeholder="Ваше имя" required)
+        input.form__field(name="Lead[phone]" type="tel" placeholder="Ваш телефон" required)
+        button.btn.form__btn(type="submit") Оставить заявку
+      
+        label.form__checkbox
+          input.form__checkbox_default(type="checkbox" name="checkbox" value="ready" checked required)
+          span.form__checkbox_new
+            +svg('check')
+          | Нажимая на кнопку, вы даете согласие на обработку персональных данных
+
+    .modal__wrap.modal__wrap--quiz.hidden
+      .modal__inner
+        .modal__title Ответьте на <strong>5 вопросов</strong> и<br> получите <strong>индивидуальную цену</strong> на процедуру
+        .modal__inner 
+          .modal__block.modal__block--quiz.quiz
+            .quiz__wrap 
+              .quiz__pagination.pagination
+                .pagination__line 
+                .pagination__line-active
+
+              .quiz__inner
+
+                .quiz__tab
+                  .quiz__content
+                    .quiz__title 1. Сколько Вам лет?
+                    
+                  .quiz__variants
+                    .radio.quiz__radio
+                      label.radio__label(for="age_1") Больше 30 лет
+                      input.radio__default(id="age_1" type="radio" name="age" checked)
+                      span.radio__new
+                    .radio.quiz__radio
+                      label.radio__label(for="age_2") 50 лет
+                      input.radio__default(id="age_2" type="radio" name="age")
+                      span.radio__new
+                    .radio.quiz__radio
+                      label.radio__label(for="age_3") 40 лет
+                      input.radio__default(id="age_3" type="radio" name="age")
+                      span.radio__new
+                    .radio.quiz__radio
+                      label.radio__label(for="age_4") 60 лет
+                      input.radio__default(id="age_4" type="radio" name="age")
+                      span.radio__new
+
+                    input.quiz__input.quiz-input(name="age" type="tel" placeholder="Введите другое")
+
+                .quiz__tab
+                  .quiz__content
+                    .quiz__title 2. Как давно Вы были у косметолога?
+                    
+                  .quiz__variants
+                    .radio.quiz__radio
+                      label.radio__label(for="visit_1") 1 месяц
+                      input.radio__default(id="visit_1" type="radio" name="visit" checked)
+                      span.radio__new
+                    .radio.quiz__radio
+                      label.radio__label(for="visit_2") 6 месяцев
+                      input.radio__default(id="visit_2" type="radio" name="visit")
+                      span.radio__new
+                    .radio.quiz__radio
+                      label.radio__label(for="visit_3") 3 месяца
+                      input.radio__default(id="visit_3" type="radio" name="visit")
+                      span.radio__new
+                    .radio.quiz__radio
+                      label.radio__label(for="visit_4") Не помню
+                      input.radio__default(id="visit_4" type="radio" name="visit")
+                      span.radio__new
+
+                .quiz__tab
+                  .quiz__content
+                    .quiz__title 3. Какие у Вас проблемы с кожей лица?
+                    
+                  .quiz__variants
+                    .checkbox.quiz__checkbox
+                      label.checkbox__label(for="problems_1") Дряблость и сухость
+                      input.checkbox__default(id="problems_1" type="checkbox" name="problems" checked)
+                      span.checkbox__new
+                    .checkbox.quiz__checkbox
+                      label.checkbox__label(for="problems_2") Брыли
+                      input.checkbox__default(id="problems_2" type="checkbox" name="problems")
+                      span.checkbox__new
+                    .checkbox.quiz__checkbox
+                      label.checkbox__label(for="problems_3") Мимческие морщины
+                      input.checkbox__default(id="problems_3" type="checkbox" name="problems")
+                      span.checkbox__new
+                    .checkbox.quiz__checkbox
+                      label.checkbox__label(for="problems_4") Носогубные и межбровные складки
+                      input.checkbox__default(id="problems_4" type="checkbox" name="problems")
+                      span.checkbox__new
+                    .checkbox.quiz__checkbox
+                      label.checkbox__label(for="problems_5") Провисание овала лица
+                      input.checkbox__default(id="problems_5" type="checkbox" name="problems")
+                      span.checkbox__new
+                    .checkbox.quiz__checkbox
+                      label.checkbox__label(for="problems_6") Рубцы и шрамы
+                      input.checkbox__default(id="problems_6" type="checkbox" name="problems")
+                      span.checkbox__new
+
+                .quiz__tab
+                  .quiz__content
+                    .quiz__title 4. Какой эффект Вам нужен
+                    
+                  .quiz__variants
+                    .checkbox.quiz__checkbox
+                      label.checkbox__label(for="effect_1") Увлажнить кожу
+                      input.checkbox__default(id="effect_1" type="checkbox" name="effect" checked)
+                      span.checkbox__new
+                    .checkbox.quiz__checkbox
+                        label.checkbox__label(for="effect_2") Добиться лифтинг-эффекта
+                        input.checkbox__default(id="effect_2" type="checkbox" name="effect")
+                        span.checkbox__new
+                    .checkbox.quiz__checkbox
+                        label.checkbox__label(for="effect_3") Разгладить мимические морщинки
+                        input.checkbox__default(id="effect_3" type="checkbox" name="effect")
+                        span.checkbox__new
+                  
+                .quiz__tab
+                  .quiz__content
+                    .quiz__title 5. Когда Вы готовы провести процедуру?
+                    
+                  .quiz__variants
+                    .radio.quiz__radio
+                      label.radio__label(for="time_1") Сегодня
+                      input.radio__default(id="time_1" type="radio" name="time" checked)
+                      span.radio__new
+                    .radio.quiz__radio
+                      label.radio__label(for="time_2") Через 2-3 дня
+                      input.radio__default(id="time_2" type="radio" name="time")
+                      span.radio__new
+                    .radio.quiz__radio
+                      label.radio__label(for="time_3") Завтра
+                      input.radio__default(id="time_3" type="radio" name="time")
+                      span.radio__new
+                    .radio.quiz__radio
+                      label.radio__label(for="time_4") Не знаю
+                      input.radio__default(id="time_4" type="radio" name="time")
+                      span.radio__new
+
+                .quiz__tab
+                  .quiz__title.quiz__title--last Спасибо!
+                  .quiz__subtitle Оставьте свои контакты и мы согласуем<br> удобное для Вас время процедуры
+
+                  form.form.form-quiz(action="")
+                    input(name="Lead[age]" type="hidden" data-name='age')
+                    input(name="Lead[visit]" type="hidden" data-name='visit')
+                    input(name="Lead[problems]" type="hidden" data-name='problems')
+                    input(name="Lead[effect]" type="hidden" data-name='effect')
+                    input(name="Lead[time]" type="hidden" data-name='time')
+
+                    input.form__field.form__field--quiz(name="Lead[name]" type="text" placeholder="Ваше имя" required)
+                    input.form__field.form__field--quiz(name="Lead[phone]" type="tel" placeholder="Ваш телефон" required)
+                    button.btn.quiz__btn.quiz__btn--form(type="submit") Получить процедуру
+                  
+                    label.form__checkbox.form__checkbox--quiz
+                      input.form__checkbox_default(type="checkbox" name="checkbox" value="ready" checked required)
+                      span.form__checkbox_new.form__checkbox_new--quiz
+                        +svg('check')
+                      | Нажимая на кнопку, вы даете согласие на обработку персональных данных
+
+
+              .quiz__nav
+                button.btn.quiz__btn.quiz__btn--prev.hidden
+                  +svg('arrow')
+                button.btn.quiz__btn.quiz__btn--next
+                  span Дальше  
+                button.btn.quiz__btn.quiz__btn--end.hidden
+                  span Завершить  
+                
+
+          .modal__block.modal__block--aside.m-aside
+            .m-aside__title Ваша цена
+            .m-aside__price 
+              span 5 000 ₽
+              span 4 000 ₽
+              span 3 000 ₽
+              span 2 000 ₽
+              span 1 000 ₽
+              span 0 ₽
+            .m-aside__foto
+              +image('quiz/', 'aside', 'Фотография консультации', '', 'jpg')
+            .m-aside__text Если Вам нужна консультация специалиста — просто оставьте заявку
+            button.btn.callback-btn.btn--center Оставить заявку

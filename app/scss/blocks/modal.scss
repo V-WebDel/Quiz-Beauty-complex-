@@ -1,0 +1,315 @@
+.modal {
+  background-color: #ccc;
+
+  &__overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    transition: all $slowdown;
+
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__close {
+    @include no-btn;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+
+    svg {
+      fill: $default;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__wrap {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    background-color: #ffffff;
+    transform: translate(-50%, -50%);
+
+    &--callback {
+      width: 900px;
+      padding: 60px;
+      background-color: #a9ca8d;
+      background-image: url(../img/modal/bg.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 40px;
+    }
+
+    &--quiz {
+      width: 100%;
+      height: 100vh;
+      padding: 30px;
+      overflow-y: scroll;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    top: 60px;
+    left: 50%;
+    z-index: 1;
+    width: 1200px;
+    
+    background-color: #ffffff;
+    transform: translateX(-50%);
+  }
+
+  &__title {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    width: 660px;
+    font-size: 30px;
+    text-align: center;
+    transform: translateX(-50%);
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__block {
+    &--quiz {
+      width: 75%;
+      min-height: 530px;
+      padding: 65px;
+      box-shadow: $shadow;
+      border-radius: 40px;
+    }
+    &--aside {
+      width: 25%;
+      padding: 50px 20px;
+      color: $white;
+      text-align: center;
+      background-color: $accent;
+      box-shadow: $shadow-small;
+      border-radius: 40px;
+    }
+  }
+
+  @include desktop {
+    &__inner {
+      width: 900px;
+    }
+    &__block {
+      &--quiz {
+        min-height: 480px;
+        padding: 40px;
+      }
+      &--aside {
+        padding: 40px 20px;
+      }
+    }
+  }
+
+  @include laptop {
+    &__wrap { 
+      &--callback {
+        width: 700px;
+      }
+    }
+
+    &__inner {
+      flex-direction: column;
+      align-items: center;
+      width: 600px;
+    }
+
+    &__block {
+      &--quiz {
+        width: 100%;
+      }
+      &--aside {
+        width: 100%;
+      }
+    }
+  }
+
+  @include tablets {
+    &__wrap { 
+      &--callback {
+        width: 500px;
+      }
+    }
+
+    &__title {
+      font-size: 26px;
+    }
+
+    &__inner {
+      width: 500px;
+    }
+
+    &__block {
+      &--quiz {
+        padding-bottom: 95px;
+      }
+    }
+  }
+
+  @include phones {
+    &__close {
+      top: 15px;
+      right: 15px;
+      width: 15px;
+      height: 15px;
+    }
+    &__wrap { 
+      &--callback {
+        width: 290px;
+        padding: 25px;
+      }
+    }
+
+    &__block {
+      &--quiz {
+        padding: 30px;
+        padding-bottom: 95px;
+      }
+    }
+
+    &__inner {
+      top: 30px;
+      width: 290px;
+    }
+
+    &__title {
+      top: -50px;
+      width: 100%;
+      font-size: 20px;
+    }
+  }
+}
+
+.m-aside {
+  position: relative;
+
+  &__title {
+    position: relative;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      height: 2px;
+      width: 50px;
+      background-color: $white;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__price {
+    margin-bottom: 35px;
+    font-weight: 900;
+    font-size: 36px;
+  }
+
+  &__foto {
+    height: 140px;
+    width: 210px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    border-radius: 20px;
+
+    img {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__text {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  @include desktop {
+    &__title {
+      font-size: 16px;
+    }
+    &__text {
+      font-size: 16px;
+    }
+    &__price {
+      margin-bottom: 25px;
+    }
+    &__foto {
+      width: 100%;
+      height: auto;
+    }
+
+    .btn {
+      padding: 12px;
+      font-size: 16px;
+    }
+  }
+
+  @include laptop {
+    &__foto {
+      width: 200px;
+      height: auto;
+    }
+  }
+}
+
+.callback {
+
+  &__title {
+    margin-bottom: 35px;
+    font-weight: 700;
+    font-size: 24px;
+    color: $white;
+    text-align: center;
+  }
+
+  @include desktop {
+    &__title {
+      margin-bottom: 20px;
+    }
+  }
+
+  @include laptop {
+    &__title {
+      font-size: 22px;
+    }
+  }
+
+  @include phones {
+    &__title {
+      font-size: 18px;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}

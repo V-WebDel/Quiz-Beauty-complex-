@@ -1,0 +1,256 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 0 auto;
+
+  &__field {
+    margin-bottom: 10px;
+    padding: 15px 30px;
+    line-height: 1;
+    color: $white;
+    background: transparent;
+    border: 2px solid $white;
+    border-radius: 30px;
+
+    &--quiz {
+      font-size: 18px;
+      color: $default;
+      border: 2px solid $grey;
+
+      &::placeholder {
+        color: $grey;
+        opacity: 1;
+      }
+    }
+  }
+
+  &__btn {
+    color: $accent;
+    background-color: $white;
+  }
+
+  &__checkbox {
+    position: relative;
+    display: block;
+    width: 90%;
+    margin: 20px auto 0;
+    padding-left: 30px;
+    font-size: 16px;
+    color: $white;
+    cursor: pointer;
+  
+    &--quiz {
+      color: $default;
+    }
+    
+    &_default {
+      display: none;
+  
+      &:checked + .form__checkbox_new {
+        svg {
+          display: block;
+        } 
+      }
+    }
+      
+    &_new {
+      position: absolute;
+      left: 0;
+      top: -2px;
+      width: 22px;
+      height: 22px;
+      margin-right: 7px;
+      background-color: $accent;
+      border: 2px solid rgba($white, 0.8);
+      border-radius: 2px;
+  
+      svg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        display: none;
+        width: 15px;
+        height: 15px;
+        fill: $white;
+        transform: translate(-50%, -50%);
+      }
+
+      &--quiz {
+        background-color: $white;
+        border: 2px solid $grey;
+
+        svg {
+          fill: $blue;
+        }
+      }
+    }
+  }
+
+  @include phones {
+    &__checkbox {
+      font-size: 14px;
+    }
+  }
+}
+
+// Radio button
+.radio {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 35px;
+  cursor: pointer;
+  transition: $middledown;
+
+  &:active {
+    .radio__new {
+      transform: translateY(-50%) scale(1.2);
+    }
+  }
+
+  &__default {
+    display: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    &:checked + .radio__new {
+
+      &::before {
+        display: block;
+      }
+    }
+  }
+
+  &__new {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 23px;
+    height: 23px;
+    border: 3px solid $grey;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: $fastdown;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      display: none;
+      width: 75%;
+      height: 75%;
+      background-color: $blue;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__label {
+    font-weight: 500;
+    font-size: 16px;
+    white-space: nowrap;
+    cursor: pointer;
+    background-color: transparent;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+// Radio button
+.checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 35px;
+  cursor: pointer;
+  transition: $middledown;
+
+  &:active {
+    .radio__new {
+      transform: translateY(-50%) scale(1.2);
+    }
+  }
+
+  &__default {
+    display: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    &:checked + .checkbox__new {
+
+      &::before {
+        display: block;
+      }
+    }
+  }
+
+  &__new {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 23px;
+    height: 23px;
+    border: 3px solid $grey;
+    border-radius: 2px;
+    transform: translateY(-50%);
+    transition: $fastdown;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      display: none;
+      width: 75%;
+      height: 75%;
+      background-image: url(../img/icons/check.svg);
+      background-size: 15px;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__label {
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: transparent;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

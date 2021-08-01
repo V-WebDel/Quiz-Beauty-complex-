@@ -1,0 +1,30 @@
+.footer {
+  padding: 35px 0;
+  background-color: #e5ebf0;
+
+  &__wrap {
+    font-weight: 400;
+    font-size: 16px;
+    color: #676d71;
+    text-align: center;
+  
+    p {
+      margin-bottom: 0;
+    }
+  
+    a {
+      color: #676d71;
+      transition: all 0.3s ease;
+  
+      &:hover {
+        color: darken(#676d71, 15%);
+        text-decoration: none;
+      }
+
+      &:active {
+        color: lighten(#676d71, 10%);
+        text-decoration: none;
+      }
+    }
+  }
+}
